@@ -1,0 +1,21 @@
+{
+  "name": "pagination",
+  "version": "1.0.0",
+  "description": "function for pagination",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest"
+  },
+  "author": "Anna",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-extended": "^4.0.2",
+    "supertest": "^7.0.0"
+  }
+}
