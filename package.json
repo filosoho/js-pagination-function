@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "function for pagination",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node app.js",
+    "start": "node src/app.js",
     "test": "jest"
   },
   "author": "Anna",
