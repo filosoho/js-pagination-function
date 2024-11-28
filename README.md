@@ -44,19 +44,19 @@ This project includes a simple Express server that exposes the pagination functi
    npm start
    ```
 
-2. Make a POST request to the /functions/paginate endpoint:
+2. Make a POST request to the `/functions/paginate` endpoint:
 
-   Send a POST request to the http://localhost:3000/functions/paginate URL with a JSON body containing the items, page, and pageSize.
+   Send a POST request to the `https://js-pagination-function.onrender.com/functions/paginate` URL with a JSON body containing the `items`, `page` and `limit`.
 
    Example JSON body:
 
    ```bash
    {
    "input": {
-   "items": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-   "page": 1,
-   "pageSize": 5
-   }
+    "items": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "page": 1,
+    "limit": 5
+    }
    }
    ```
 
@@ -65,9 +65,9 @@ This project includes a simple Express server that exposes the pagination functi
    If you want to test it using curl, you can use the following command:
 
    ```bash
-   curl -X POST http://localhost:3000/functions/paginate \
-   -H "Content-Type: application/json" \
-   -d '{"input": {"items": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "page": 1, "pageSize": 5}}'
+    curl -X POST https://js-pagination-function.onrender.com/functions/paginate \
+    -H "Content-Type: application/json" \
+    -d '{"input": {"items": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "page": 1, "limit": 5}}'
    ```
 
 4. Example Response:
@@ -79,16 +79,22 @@ This project includes a simple Express server that exposes the pagination functi
    "totalItems": 12,
    "totalPages": 3,
    "currentPage": 1,
-   "pageSize": 5,
+   "limit": 5,
    "paginatedItems": [1, 2, 3, 4, 5]
    }
    ```
+
+### Documentation
+
+For a detailed look at how to use the pagination function and more examples, you can view the live documentation at the following link:
+
+[Live API Documentation](https://js-pagination-function.onrender.com/functions/paginate)
 
 ### Function Logic
 
 The core logic of the pagination function is as follows:
 
-- Input Validation: The function checks the types of items, page, and pageSize to ensure they are valid before proceeding.
+- Input Validation: The function checks the types of `items`, `page` and `limit` to ensure they are valid before proceeding.
 - Pagination Logic: The function calculates the total number of pages and returns the items for the requested page.
 - Error Handling: If any input is invalid or required fields are missing, the function returns an error message.
 
